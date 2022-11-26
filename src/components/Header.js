@@ -4,6 +4,7 @@ export default function Header(props) {
   return (
     <div style={{widht:"inherit", height:"50px", backgroundColor:"black", color:"white"}}>
         {props.baslik}
+        {props.children}
       
     </div>
   )

@@ -1,14 +1,18 @@
-import React,{useState} from 'react'
+import React from 'react'
 import "./App.css";
-import Container from "./components/container";
+import Icerik from './components/icerik'
+
+
+export const TemaVerisi=React.createContext();
  function App() {
-  
-  const [baslik,setBaslik]=useState("React Öğreniyorum")
-  const numara=1923;
+
+  const isim="Cetin Aras"
   return (
     <div className='App'>
-      <Container title={baslik} number={numara}/>
-      <button onClick={()=>{setBaslik("React öğreniyorum Baslığını Değiştirdim.")}}>Değiştir</button>
+      <TemaVerisi.Provider value={isim}>
+      <Icerik/>
+      </TemaVerisi.Provider>
+  
     </div>
   )
 }

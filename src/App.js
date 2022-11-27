@@ -30,7 +30,7 @@ export const TemaVerisi=React.createContext();
       <button onClick={değiştir}>
         {tema.dark===mod ? "Açık":"Koyu"}
       </button>
-      <TemaVerisi.Provider value={isim}>
+      <TemaVerisi.Provider value={mod}>
       <Icerik/>
       </TemaVerisi.Provider>
   

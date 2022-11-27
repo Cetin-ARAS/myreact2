@@ -4,7 +4,7 @@ import {TemaVerisi} from '../App'
 
 export default function Icerik() {
   return (
-    <div>
+    <div style={color}>
         <p>{useContext(TemaVerisi)}</p>
         <h1>React Öğreniyorum</h1>
         <h2>useContect ile componentler arası veri taşıma</h2>

@@ -1,20 +1,25 @@
 import React,{useState,useEffect} from 'react'
 import "./App.css";
 function App () {
-  
-  const [count,setCount]=useState(0);
-  const [title,setTitle]=useState("Effect");
+
+  const [timer,setTimer]=useState(5);
 
   useEffect(()=>{
-  console.log(count)
-  },[title]);
+    if(timer!==0){
+   const interval=setInterval(() => {
+    setTimer(timer-1)
+   },1000);
+   return ()=>clearInterval(interval);  //? buradaDidUnMount yaptık
+  }
+
+
+  },[timer])
 
 
 
   return (
     <div className='App'>
-      <button onClick={()=>{setCount(count+1)}}>Arttır</button>
-      <p>{title}</p>
+     <div style={{height:"250px",width:"250px",backgroundColor:"blue",borderRadius:"250px",color:"white",fontSize:"60px",margin:"10px auto",lineHeight:"250px"}}>{timer}</div>
 
     </div>
   );

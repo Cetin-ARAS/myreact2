@@ -11,7 +11,7 @@ function App () {
    },1000);
    return ()=>clearInterval(interval);  //? buradaDidUnMount yaptık
   }
-
+  // document.title=timer;
 
   },[timer])
 

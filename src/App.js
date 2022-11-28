@@ -1,45 +1,22 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import "./App.css";
-import Icerik from './components/icerik'
+function App () {
+  
+  const [count,setCount]=useState(0);
 
-const tema={
-  dark:{
-    color:"white",
-    backgroundColor:"black"
-  },
-  light:{
-    color:"black",
-    backgroundColor:"white"
-  }
-};
-export const TemaVerisi=React.createContext();
- function App() {
-  const [mod,setMod]=useState(tema.dark);
-  const isim="Cetin Aras"
+  useEffect(()=>{
+  console.log(count)
+  })
 
-  function değiştir(){
-    if(tema.dark===mod){
-      setMod(tema.light)
-    }
-    else{
-      setMod(tema.dark)
-    }
-  }
+
+
   return (
     <div className='App'>
-      <button onClick={değiştir}>
-        {tema.dark===mod ? "Açık":"Koyu"}
-      </button>
-      <TemaVerisi.Provider value={mod}>
-      <Icerik/>
-      </TemaVerisi.Provider>
-  
+      <button onClick={()=>{setCount(count+1)}}>Arttır</button>
+
     </div>
-  )
+  );
 }
-
-
-
 
 export default App;
 
